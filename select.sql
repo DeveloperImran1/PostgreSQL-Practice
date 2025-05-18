@@ -134,20 +134,21 @@ VALUES (
         'Bangladesh'
     )
 
-SELECT * FROM student;
 -- Table er all column er data show hobe.
+SELECT * FROM student;
 
-SELECT first_name FROM student;
 -- sudho firse_name column er data show hobe.
+SELECT first_name FROM student;
 
-SELECT email, age FROM student;
 -- sudho email and age column er data show hobe.
+SELECT email, age FROM student;
 
-SELECT email as "Student Email" FROM student;
 -- student er email gulo show hobe. But Column er name hisabe show hobe Student Email.  actual name silo emal k alias korese. Aikhane amra double cottation use koresi. Karon SQL a column name k all time double couteation dia use kora hoi. Ar string ke single cottation dia use kora hoi.
+SELECT email as "Student Email" FROM student;
 
-SELECT * FROM student ORDER BY first_name ASC;
 -- order by er maddhome kono column er value ke ascending or descending a filter kora jai.
+SELECT * FROM student ORDER BY first_name ASC;
+
 SELECT * FROM student ORDER BY first_name DESC;
 
 SELECT * FROM student ORDER BY dob ASC;
@@ -210,16 +211,17 @@ SELECT * FROM student WHERE NOT age = 20;
 -- NOT keyword er maddhome !== kei mean kore.
 
 -- -------------------- SQL er Scalar function ---------
-SELECT upper(first_name) FROM student;
 -- first_name column sudho get hobe and all name upper case a hobe.
-SELECT upper(first_name) as first_name_in_upper_case FROM student;
+SELECT upper(first_name) FROM student;
+
 -- aitao same kaj ee hobe, but column name ta alias hoia first_name_in_upper_case name show korbe.
+SELECT upper(first_name) as first_name_in_upper_case FROM student;
 
-SELECT concat(first_name, ' ', last_name) FROM student;
 -- 2 ta column er value ke concat kore.
+SELECT concat(first_name, ' ', last_name) FROM student;
 
-SELECT length(first_name) FROM student;
 -- every row er first_name er length ta show hobe.
+SELECT length(first_name) FROM student;
 
 -- -------------------- SQL er Aggregate function ---------
 SELECT avg(age) from student;
@@ -228,21 +230,19 @@ SELECT max(age) FROM student;
 
 SELECT min(age) FROM student;
 
-SELECT count(age) FROM student;
 -- koita row te age column er value ase.
-SELECT count(*) FROM student;
--- koita row ase total.
+SELECT count(age) FROM student;
 
-SELECT max(length(first_name)) FROM student;
+-- koita row ase total.
+SELECT count(*) FROM student;
+
 -- kon first_name er length besi. Seita return korbe.
+SELECT max(length(first_name)) FROM student;
 
 ----------------- NULL data type ----------------
 
-SELECT *
-FROM student
-    -- WHERE email = 'null'; --- aivabe kaj hobena. Karon null er sathe email equal korle, true or false output dibana. Null output a asbe.
-WHERE
-    email IS NULL;
+-- WHERE email = 'null'; --- aivabe kaj hobena. Karon null er sathe email equal korle, true or false output dibana. Null output a asbe.
+SELECT * FROM student WHERE email IS NULL;
 -- IS Keyword use kore hobe. Jar maddhome, bolte pari email holo null.
 
 -- Jodi kono attribute er value null pawa jai, tader ke akta default value dia front-end a pathabo. tahole amra COALESCE() method use korte pari.
@@ -304,7 +304,7 @@ SELECT * FROM student WHERE first_name LIKE ('M%')
 -- Like operator er maddhome, first_name er jei jei value gulo 'a' letter dia ses hoisa. But samne ja issa, tai thakuk somossa nai. Taderke query korbe.  Tar mane '%' symboll dia mean kortese,, Je kono dhoroner letter jotoguo issa thakte pare.
 SELECT * FROM student WHERE first_name LIKE ('%a');
 
--- 1 ta underscore(_) dia bujhai, akta letter por, 2 ta underscore dia bujha 2 ta charrecter por. ar '%' dia bujhai jekon letter hote pare. so ai code er mane holo: 2 ta letter por 're' letter thakbe and last a jekono kiso thakte pare.
+-- 1 ta underscore(_) dia bujhai, akta letter por, 2 ta underscore dia bujha 2 ta charrecter por. ar '%' dia bujhai jekono letter hote pare. so ai code er mane holo: 2 ta letter por 're' letter thakbe and last a jekono kiso thakte pare.
 SELECT * FROM student WHERE first_name LIKE ('__re%');
 
 -- LIKE and ILIKE er kaj same to same. But LIKE holo case sencitive. Ar ILIKE holo case In sencitive.
