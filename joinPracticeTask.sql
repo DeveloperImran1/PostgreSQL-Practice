@@ -328,6 +328,8 @@ GROUP BY
 HAVING
     COUNT(*) > 2;
 
+-- [NOte: aikhane last line a having keyword use koresi. Karon where use hoi kono table er every row k call korte. Ar Having use hoi every group er all row ke call korte.]
+
 SELECT * FROM orders
 
 -- Task 7: Find the total amount of orders placed each month in the year 2022.
